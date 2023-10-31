@@ -23,24 +23,24 @@ containing all the data files mentioned previously.
 * The notebook contains python code and the whole code runs on Google colab lasting
 for under 10 minutes.
 * The General Overview of the Notebook is as follows:
-- 1. Importing Relevant libraries
+ 1. Importing Relevant libraries
 pandas (1.5.3), numpy (1.23.5), scikit-learn (1.2.2), scipy(1.11.3)
-- 2. Reading Data
-- 3. Engineering Features
+ 2. Reading Data
+ 3. Engineering Features
 The features fed into the model are 62 and fall into 2 categories:
-    - Features for the geometry in the current year for which prediction is
+        - Features for the geometry in the current year for which prediction is
 being made. These features such as ‘ssn_1.0’ and ‘ssn_2.0’ which are
 the one-hot encoded versions of the ‘season’ column
-    - Features from the previous year’s data for the same geometry whose
+        - Features from the previous year’s data for the same geometry whose
 ‘aqi’ is to be forecasted. It must be noted that the ‘aqi’ value for the
 previous year is renamed as ‘aqi_y’ so it is not confused (in the case
 of the training set) for the ‘aqi’ to be predicted.
-- 4. Developing Pipelines and training models
-    - Pipeline involved scaling (standardScaler), selecting best features
+ 4. Developing Pipelines and training models
+        - Pipeline involved scaling (standardScaler), selecting best features
 (SelectKBest) and then fitting a RandomForestClassifier model.
-    - The model's hyperparameters were tuned using the RandomizedsearchCV
-- 5. Predicting and preparing submission
-    - Predictions are made on the data imported from 'Test.csv' which has been
+        - The model's hyperparameters were tuned using the RandomizedsearchCV
+ 5. Predicting and preparing submission
+        - Predictions are made on the data imported from 'Test.csv' which has been
 transformed to include the same features as the train data.
-    - The final predictions are exported to 'Submission.csv' in the same directory as
+        - The final predictions are exported to 'Submission.csv' in the same directory as
 the jupyter notebook.
